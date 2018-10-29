@@ -32,6 +32,7 @@ class LocationHandler(val activity: Activity, val locationResultListener: Locati
 
     private fun initLocationVariables() {
         locationManager = activity.getSystemService(LOCATION_SERVICE) as LocationManager
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(activity)
         locationRequest = LocationRequest
                 .create()
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
